@@ -1,0 +1,14 @@
+# IntelliJ
+.idea/
+*.iml
+
+# Build
+out/
+
+# JDK local
+src/oracleJdk-26/
+
+# JDKs e arquivos pesados
+**/bin/oracleJdk-26/
+**/oracleJdk-*/
+*.bin
