@@ -29,6 +29,8 @@ public class BankStatementAnalyzer {
         System.out.println("The total for all transactions in January is " + bankStatementProcessor.calculateTotalInMonth(Month.JANUARY));
         System.out.println("The total for all transactions in February is " + bankStatementProcessor.calculateTotalInMonth(Month.FEBRUARY));
         System.out.println("The total salary received is  " + bankStatementProcessor.calculateTotalForCategory("salary"));
+        System.out.println("The minimal value between JANUARY AND MARCH is " + bankStatementProcessor.returnMinimalBetweenMonths(Month.JANUARY, Month.MARCH));
+
     }
 
 }

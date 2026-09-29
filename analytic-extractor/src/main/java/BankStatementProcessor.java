@@ -3,6 +3,7 @@ package main.java;
 import main.java.domain.BankTransaction;
 
 import java.time.Month;
+import java.util.Calendar;
 import java.util.List;
 
 public class BankStatementProcessor {
@@ -36,6 +37,20 @@ public class BankStatementProcessor {
         for(final BankTransaction bankTransaction: bankTransactions){
             if(bankTransaction.getDescription().equals(category)){
                 total += bankTransaction.getAmount();
+            }
+        }
+
+        return total;
+    }
+
+    public double returnMinimalBetweenMonths(final Month initialMonth, final Month finalMonth){
+        double total = 0;
+        for(final BankTransaction bankTransaction: bankTransactions){
+            Month date = bankTransaction.getDate().getMonth();
+            if(date.getValue() >= initialMonth.getValue() && date.getValue() <= finalMonth.getValue()){
+                if(total > bankTransaction.getAmount() || total == 0){
+                    total = bankTransaction.getAmount();
+                }
             }
         }
 
